@@ -1,0 +1,11 @@
+zoo_platform_homepage:
+    path:     /
+    defaults: { _controller: ZooPlatformBundle:Default:index }
+    
+zoo_platform_home:
+    path:     /home
+    defaults: { _controller: ZooPlatformBundle:Home:index }
+    
+zoo_platform_login:
+    path:     /login
+    defaults: { _controller: ZooPlatformBundle:User:login }
