@@ -1,0 +1,20 @@
+animal_list:
+    path:     /animal
+    defaults: { _controller: AnimalBundle:Animal:list }
+    
+animal_show:
+    path:     /animal/show/{id}
+    defaults: { _controller: AnimalBundle:Animal:show }
+    
+animal_add:
+    path:     /animal/add
+    defaults: { _controller: AnimalBundle:Animal:add }
+    
+animal_edit:
+    path:     /animal/edit/{id}
+    defaults: { _controller: AnimalBundle:Animal:edit }
+    
+animal_remove:
+    path:     /animal/remove/{id}
+    defaults: { _controller: AnimalBundle:Animal:removeAnimal }
+    

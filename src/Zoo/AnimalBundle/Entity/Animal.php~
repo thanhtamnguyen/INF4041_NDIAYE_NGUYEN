@@ -1,0 +1,244 @@
+<?php
+
+namespace Zoo\AnimalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Animal
+ *
+ * @ORM\Table(name="animal")
+ * @ORM\Entity(repositoryClass="Zoo\AnimalBundle\Repository\AnimalRepository")
+ */
+class Animal
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="species", type="string", length=255)
+     */
+    private $species;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="family", type="string", length=255)
+     */
+    private $family;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="class", type="string", length=255)
+     */
+    private $class;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="weight", type="float")
+     */
+    private $weight;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="height", type="float")
+     */
+    private $height;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="age", type="integer")
+     */
+    private $age;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Animal
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set species
+     *
+     * @param string $species
+     * @return Animal
+     */
+    public function setSpecies($species)
+    {
+        $this->species = $species;
+
+        return $this;
+    }
+
+    /**
+     * Get species
+     *
+     * @return string 
+     */
+    public function getSpecies()
+    {
+        return $this->species;
+    }
+
+    /**
+     * Set family
+     *
+     * @param string $family
+     * @return Animal
+     */
+    public function setFamily($family)
+    {
+        $this->family = $family;
+
+        return $this;
+    }
+
+    /**
+     * Get family
+     *
+     * @return string 
+     */
+    public function getFamily()
+    {
+        return $this->family;
+    }
+
+    /**
+     * Set class
+     *
+     * @param string $class
+     * @return Animal
+     */
+    public function setClass($class)
+    {
+        $this->class = $class;
+
+        return $this;
+    }
+
+    /**
+     * Get class
+     *
+     * @return string 
+     */
+    public function getClass()
+    {
+        return $this->class;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param float $weight
+     * @return Animal
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return float 
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Set height
+     *
+     * @param float $height
+     * @return Animal
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+
+        return $this;
+    }
+
+    /**
+     * Get height
+     *
+     * @return float 
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     * @return Animal
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer 
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+}

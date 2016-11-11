@@ -1,0 +1,14 @@
+{# src/Zoo/AnnimalBundle/Resources/views/AnimalView/edit.html.twig #}
+
+{# extends 'base.html.twig' #}
+{% extends '@WebProfiler/Profiler/base.html.twig' %}
+
+{% block body %}
+    <h1>
+        Animal edit
+    </h1>
+    <div class="well">
+        {{ form(form) }}
+    </div>
+    <a href="/animal">Back to Animal List</a>
+{% endblock %}                        

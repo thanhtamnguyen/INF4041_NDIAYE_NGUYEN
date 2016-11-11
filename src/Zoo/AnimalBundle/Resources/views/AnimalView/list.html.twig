@@ -1,0 +1,49 @@
+{# src/Zoo/AnnimalBundle/Resources/views/AnimalView/list.html.twig #}
+
+
+
+{% extends '@WebProfiler/Profiler/base.html.twig' %}
+
+{% block body %}
+    <h1>
+        Animal List
+    </h1>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-condensed"
+        <thead>
+            <td>Nom</td>
+            <td>Espèce</td>
+            <td>Famille</td>
+            <td>Classe</td>
+    <!--
+            <td>Poids (kg)</td>
+            <td>Taille (m)</td>
+            <td>Âge</td>
+    -->
+            <td>Action</td>
+        </thead>
+        {% for animal in listAnimals %}
+            <tr> 
+                <td>{{ animal.getName() }}</td>
+                <td>{{ animal.getSpecies() }}</td>
+                <td>{{ animal.getFamily() }}</td>
+                <td>{{ animal.getClass() }}</td>
+    <!--
+                <td>{{ animal.getWeight() }}</td>
+                <td>{{ animal.getHeight() }}</td>
+                <td>{{ animal.getAge() }}</td>
+    -->
+                <td>
+                    <a href="/animal/show/{{animal.getId()}}">Voir Plus</a> | 
+                    <a href="/animal/edit/{{animal.getId()}}">Editer</a> | 
+                    <a href="/animal/remove/{{animal.getId()}}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div>
+        <a href="/animal/add">Ajouter un nouvel animal</a>
+    </div> 
+    </div> 
+{% endblock %}
+                         

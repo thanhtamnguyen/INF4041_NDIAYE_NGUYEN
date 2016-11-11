@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Zoo Management{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <div class="bs-docs-header">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/home">Zoo Management</a>
+                    </div>
+                    <!-- navbar-header -->
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+
+                            <li><a href="/animal">Animal</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <!--
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                   role="button" aria-expanded="false">Animal<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href=""></a></li>
+                              </ul>
+                            </li>
+            -->
+                        </ul>
+
+                    </div>
+                    <!-- navbar-collapse -->
+                </nav>
+                <!-- navbar -->
+
+            </div>
+            <!-- container -->
+        </div>
+        <!-- header -->
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block body %}{% endblock %} {% block javascripts %}{% endblock %}
+    </div>
+
+    {% block footer %}
+    <hr/>
+    <div class="bs-docs-footer">
+        <div class="container">
+            <p class="page-header"></p>
+            <p class="text-center">
+                <span class="glyphicon glyphicon-copyright-mark"></span> &copy; NDIAYE A, NGUYEN TT
+                <span class="glyphicon glyphicon-copyright-mark"></span> &copy; <a class="black" href="https://www.esiea.fr" target="_blank">ESIEA</a> 2016.
+                <br> Based on <a class="black" href="https://www.symfony.com/" target="_blank">Symfony</a> 2.8, <a class="black" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and  <a class="black" href="http://glyphicons.com/" target="_blank">Glyphicons</a>.
+            </p>
+        </div>
+        <!-- container -->
+    </div>
+    <!-- footer -->
+    {% endblock %}
+
+</body>
+
 </html>

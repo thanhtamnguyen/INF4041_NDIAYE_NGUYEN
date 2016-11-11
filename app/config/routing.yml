@@ -1,3 +1,11 @@
+staff:
+    resource: "@StaffBundle/Resources/config/routing.yml"
+    prefix:   /
+
+animal:
+    resource: "@AnimalBundle/Resources/config/routing.yml"
+    prefix:   /
+
 zoo_platform:
     resource: "@ZooPlatformBundle/Resources/config/routing.yml"
     prefix:   /
