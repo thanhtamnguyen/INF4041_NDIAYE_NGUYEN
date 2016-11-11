@@ -1,14 +1,22 @@
 {# src/Zoo/AnnimalBundle/Resources/views/AnimalView/edit.html.twig #}
 
-{# extends 'base.html.twig' #}
-{% extends '@WebProfiler/Profiler/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="page-header">
     <h1>
-        Animal edit
+        Editer un Animal 
     </h1>
-    <div class="well">
+</div>
+   
+    <div class="container col-md-6">
         {{ form(form) }}
     </div>
-    <a href="/animal">Back to Animal List</a>
+    
+<div class="container col-md-12">
+    <a id="back" class="btn btn-info" href="/animal">
+        <span class="glyphicon glyphicon-arrow-left"></span>
+        Revenir à la liste d'Animaux
+    </a>
+</div>
 {% endblock %}                        

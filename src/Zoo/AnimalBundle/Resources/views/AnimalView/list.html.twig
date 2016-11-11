@@ -1,49 +1,56 @@
 {# src/Zoo/AnnimalBundle/Resources/views/AnimalView/list.html.twig #}
 
-
-
-{% extends '@WebProfiler/Profiler/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="page-header">
     <h1>
-        Animal List
+        Liste d'Animaux
     </h1>
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover table-condensed"
-        <thead>
-            <td>Nom</td>
-            <td>Espèce</td>
-            <td>Famille</td>
-            <td>Classe</td>
+</div>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover table-condensed"
+    <thead>
+       <tr class="info">
+            <td class="text-center">Nom</td>
+            <td class="text-center">Espèce</td>
+            <td class="text-center">Famille</td>
+            <td class="text-center">Classe</td>
     <!--
-            <td>Poids (kg)</td>
-            <td>Taille (m)</td>
-            <td>Âge</td>
+            <td class="text-center">Poids (kg)</td>
+            <td class="text-center">Taille (m)</td>
+            <td class="text-center">Âge</td>
     -->
-            <td>Action</td>
-        </thead>
+            <td class="text-center">Action</td>
+        </tr>
+    </thead>
+    <tbody>
         {% for animal in listAnimals %}
-            <tr> 
-                <td>{{ animal.getName() }}</td>
-                <td>{{ animal.getSpecies() }}</td>
-                <td>{{ animal.getFamily() }}</td>
-                <td>{{ animal.getClass() }}</td>
+          <tr>
+                <td class="text-center">{{ animal.getName() }}</td>
+                <td class="text-center">{{ animal.getSpecies() }}</td>
+                <td class="text-center">{{ animal.getFamily() }}</td>
+                <td class="text-center">{{ animal.getClass() }}</td>
     <!--
-                <td>{{ animal.getWeight() }}</td>
-                <td>{{ animal.getHeight() }}</td>
-                <td>{{ animal.getAge() }}</td>
+                <td class="text-center">{{ animal.getWeight() }}</td>
+                <td class="text-center">{{ animal.getHeight() }}</td>
+                <td class="text-center">{{ animal.getAge() }}</td>
     -->
-                <td>
-                    <a href="/animal/show/{{animal.getId()}}">Voir Plus</a> | 
-                    <a href="/animal/edit/{{animal.getId()}}">Editer</a> | 
-                    <a href="/animal/remove/{{animal.getId()}}">Supprimer</a>
+                <td class="text-center">
+                    <a href="/animal/show/{{animal.getId()}}">Voir Plus <span class="glyphicon glyphicon-eye-open"></span></a> | 
+                    <a href="/animal/edit/{{animal.getId()}}">Editer <span class="glyphicon glyphicon-edit"></span></a> | 
+                    <a href="/animal/remove/{{animal.getId()}}">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
                 </td>
             </tr>
         {% endfor %}
-    </table>
-    <div>
-        <a href="/animal/add">Ajouter un nouvel animal</a>
-    </div> 
-    </div> 
+    <tbody>
+</table>
+</div> 
+<div class="container col-md-12">
+    <a id="back" class="btn btn-info" href="/animal">
+        <span class="glyphicon glyphicon-plus"></span>
+        Ajouter un nouvel animal
+    </a>
+</div> 
 {% endblock %}
                          

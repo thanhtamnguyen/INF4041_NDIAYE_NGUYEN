@@ -1,41 +1,40 @@
 {# src/Zoo/AnnimalBundle/Resources/views/AnimalView/add.html.twig #}
 
-{# extends 'base.html.twig' #}
-{% extends '@WebProfiler/Profiler/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>
-        Animal Add
-    </h1>
-    <div class="well">
-        <h3>
-           Before
-        </h3>
-        {{ form(form) }}
-    </div>
-    <div class="well">
-        <h3>
-           After (with bootstrap)
-        </h3>
-        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
-        {{ form_errors(form) }}
-        <div class="form-group">
-            {{ form_label(form.name, "Nom de l'animal",
-                    {'label_attr': {'class': 'col-sm-3 control-label'}}
-                ) }}
+<div class="page-header">
+    <h1>Ajouter un nouvel Animal</h1>      
+</div>
+<div class="well">
+    <h3>
+       Before
+    </h3>
+    {{ form(form) }}
+</div>
+<div class="well">
+    <h3>
+       After (with bootstrap)
+    </h3>
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {{ form_errors(form) }}
+    <div class="form-group">
+        {{ form_label(form.name, "Nom de l'animal",
+                {'label_attr': {'class': 'col-sm-3 control-label'}}
+            ) }}
 
-            {{ form_errors(form.name) }}
+        {{ form_errors(form.name) }}
 
-            <div class="col-sm-4">
-                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
-            </div>
+        <div class="col-sm-4">
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
         </div>
-        {# Bouton Saves #}
-        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
-
-        {{ form_rest(form) }}
-
-        {{ form_end(form) }}
     </div>
-    <a href="/animal">Back to Animal List</a>
+    {# Bouton Saves #}
+    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+    {{ form_rest(form) }}
+
+    {{ form_end(form) }}
+</div>
+<a href="/animal">Back to Animal List</a>
 {% endblock %}                        

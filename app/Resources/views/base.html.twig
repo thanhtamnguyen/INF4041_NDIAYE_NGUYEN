@@ -4,63 +4,77 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Zoo Management{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.css') }}" />
+    {% endblock %}
+    {% block javacripts %}
+        <script type="text/javascript" src="{{ asset('bootstrap/js/jquery-1.11.2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bootstrap/js/jquery-ui.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bootstrap/js/npm.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bootstrap/js/sorttable.js') }}"></script>
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 
 <body>
+    {% block header %}
     <div id="sidebar">
-        {% block sidebar %}
         <div class="bs-docs-header">
             <div class="container">
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/home">Zoo Management</a>
+                        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/home">Home</a>
                     </div>
-                    <!-- navbar-header -->
 
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-
-                            <li><a href="/animal">Animal</a></li>
                             <li><a href="/about">About</a></li>
-                            <li><a href="/login">Login</a></li>
-                            <!--
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                    role="button" aria-expanded="false">Animal<span class="caret"></span></a>
                               <ul class="dropdown-menu" role="menu">
-                                <li><a href=""></a></li>
+                                <a href="/animal"><li>Liste</li></a>
+                                <a href="/animal/add"><li>Add</li></a>
                               </ul>
                             </li>
-            -->
+            
                         </ul>
-
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/login"><span class="glyphicon glyphicon-user"></span>
+                                Login</a></li>
+                      </ul>
                     </div>
-                    <!-- navbar-collapse -->
                 </nav>
-                <!-- navbar -->
-
             </div>
-            <!-- container -->
         </div>
-        <!-- header -->
-        {% endblock %}
     </div>
-
-    <div id="content">
-        {% block body %}{% endblock %} {% block javascripts %}{% endblock %}
+    {% endblock %}
+    <div class="container bs-docs-container">
+<!--       <center>-->
+        {% block body %}
+        {% endblock %} 
+        {% block javascripts %}
+        {% endblock %}
+<!--       </center>-->
     </div>
 
     {% block footer %}
-    <hr/>
     <div class="bs-docs-footer">
         <div class="container">
             <p class="page-header"></p>
             <p class="text-center">
-                <span class="glyphicon glyphicon-copyright-mark"></span> &copy; NDIAYE A, NGUYEN TT
-                <span class="glyphicon glyphicon-copyright-mark"></span> &copy; <a class="black" href="https://www.esiea.fr" target="_blank">ESIEA</a> 2016.
-                <br> Based on <a class="black" href="https://www.symfony.com/" target="_blank">Symfony</a> 2.8, <a class="black" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and  <a class="black" href="http://glyphicons.com/" target="_blank">Glyphicons</a>.
+                <span class="glyphicon glyphicon-copyright-mark"></span> NDIAYE A, NGUYEN TT
+                <span class="glyphicon glyphicon-copyright-mark"></span> <a class="black" href="https://www.esiea.fr" target="_blank">ESIEA</a> 2016.
+                <br> Based on <a class="black" href="https://www.symfony.com/" target="_blank">Symfony</a> 2.8, <a class="black" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> 3.3.7 and  <a class="black" href="http://glyphicons.com/" target="_blank">Glyphicons</a>.
             </p>
         </div>
         <!-- container -->
