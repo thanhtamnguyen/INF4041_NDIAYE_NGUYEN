@@ -32,7 +32,7 @@ CREATE TABLE `animal` (
   `height` double NOT NULL,
   `age` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,60 +41,8 @@ CREATE TABLE `animal` (
 
 LOCK TABLES `animal` WRITE;
 /*!40000 ALTER TABLE `animal` DISABLE KEYS */;
-INSERT INTO `animal` VALUES (1,'Felix','Chat','Félidé','Mammifère',4.2,0.27,2),(4,'Balto','Chien-Loup','Canidé','Mammifère',24.5,1.3,5),(5,'Jolly Jumper','Cheval','Equidé','Mammifère',80.3,1.4,10),(6,'Titi','Canari','Fringilidae','Oiseau',0.2,0.015,1),(7,'Hedwige','Harfang des Neiges','Rapace','Oiseau',7.98,0.09,3);
+INSERT INTO `animal` VALUES (1,'Felix','Chat','Félidé','Mammifère',4.2,0.27,2),(4,'Balto','Chien-Loup','Canidé','Mammifère',24.5,1.3,5),(5,'Jolly Jumper','Cheval','Equidé','Mammifère',80.3,1.4,10),(6,'Titi','Canari','Fringilidae','Oiseau',0.2,0.015,1),(7,'Hedwige','Harfang des Neiges','Rapace','Oiseau',7.98,0.09,3),(8,'Simba','Lion','Felidé','Mammifère',180,100,6);
 /*!40000 ALTER TABLE `animal` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cage`
---
-
-DROP TABLE IF EXISTS `cage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `capacity` int(11) NOT NULL,
-  `climate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `current_animal` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cage`
---
-
-LOCK TABLES `cage` WRITE;
-/*!40000 ALTER TABLE `cage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cage` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `staff`
---
-
-DROP TABLE IF EXISTS `staff`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `staff` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `lastname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `job` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `staff`
---
-
-LOCK TABLES `staff` WRITE;
-/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -106,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-11 15:00:04
+-- Dump completed on 2016-11-16 19:00:31
