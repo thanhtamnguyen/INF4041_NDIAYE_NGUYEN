@@ -1,3 +1,0 @@
-staff_homepage:
-    path:     /
-    defaults: { _controller: StaffBundle:Default:index }

@@ -1,4 +1,0 @@
-services:
-#    staff.example:
-#        class: Zoo\StaffBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
