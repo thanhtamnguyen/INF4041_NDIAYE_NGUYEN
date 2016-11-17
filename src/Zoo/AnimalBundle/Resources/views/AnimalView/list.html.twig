@@ -6,15 +6,20 @@
 <div class="page-header">
     <h1>
         Liste d'Animaux
-    </h1>
 </div>
+<div class="panel panel-primary" style="border-color:#219918">
+    <div class="panel-heading" style="background:#219918">
+
+<!--        <h3 class="panel-title" style="display: inline">Liste</h3>-->
+</div> 
+    
 <div class="table-responsive">
-  <table class="table table-hover table-condensed"
+  <table class="table table-hover table-condensed">
     <thead>
        <tr class="success">
             <td class="text-center">Nom</td>
             <td class="text-center">Espèce</td>
-            <td class="text-center">Famille</td>
+<!--            <td class="text-center">Famille</td>-->
             <td class="text-center">Classe</td>
     <!--
             <td class="text-center">Poids (kg)</td>
@@ -29,7 +34,6 @@
           <tr>
                 <td class="text-center">{{ animal.getName() }}</td>
                 <td class="text-center">{{ animal.getSpecies() }}</td>
-                <td class="text-center">{{ animal.getFamily() }}</td>
                 <td class="text-center">{{ animal.getClass() }}</td>
     <!--
                 <td class="text-center">{{ animal.getWeight() }}</td>
@@ -39,16 +43,17 @@
                 <td class="text-center">
                     <a href="/animal/show/{{animal.getId()}}">Voir Plus <span class="glyphicon glyphicon-eye-open"></span></a> | 
                     <a href="/animal/edit/{{animal.getId()}}">Editer <span class="glyphicon glyphicon-edit"></span></a> | 
-                    <a href="/animal/remove/{{animal.getId()}}">Supprimer <span class="glyphicon glyphicon-remove"></span></a>
+                    <a href="/animal/remove/{{animal.getId()}}">Supprimer <span class="glyphicon glyphicon-remove-circle"></span></a>
                 </td>
             </tr>
         {% endfor %}
     <tbody>
 </table>
 </div> 
+</div> 
 <div class="container col-md-12">
     <a id="back" class="btn btn-success" href="/animal/add">
-        <span class="glyphicon glyphicon-plus"></span>
+        <span class="glyphicon glyphicon-plus-sign"></span>
         Ajouter un nouvel animal
     </a>
 </div> 

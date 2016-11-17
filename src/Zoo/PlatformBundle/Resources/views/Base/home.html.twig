@@ -7,9 +7,21 @@
 <div class="page-header">
     <h1>Page d'accueil</h1>      
 </div>
-<div class="jumbotron">
-    <p>
-    Welcome, {{nom}}!
-    </p>
-</div>
+<!--<div class="well">-->
+   <div class="col-md-4">
+<!--       <img class="img-circle" src="{{ asset('Image/swan_home.png') }}" alt="Swan" width="100%"/>-->
+       <img class="img-circle" src="{{ asset('Image/swan_home.jpg') }}" alt="Swan" width="100%"/>
+   </div> 
+   <div class="col-md-6"> 
+        <p>
+            Bienvenue, {{nom}}!
+        </p>
+        <p>
+            Dans notre site de Gestion d'Animaux, vous pouvez ajouter, éditer et supprimer vos animaux.
+        </p>
+        <p>
+            Vous pouvez commencer par consulter la <a href="/animal">Liste des Animaux</a> ou alors par le formulaire pour <a href="/animal/add">ajouter un animal</a>.
+        </p>
+   </div>
+<!--</div>-->
 {% endblock %}                        
