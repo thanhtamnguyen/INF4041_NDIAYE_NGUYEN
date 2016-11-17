@@ -15,7 +15,7 @@ class HomeController extends Controller{
         $content = $this
                 ->get('templating')
                 ->render('ZooPlatformBundle:Base:home.html.twig',
-                        array('nom' => 'User'));
+                        array('nom' => 'Visiteur'));
         return new Response($content);
     }
     

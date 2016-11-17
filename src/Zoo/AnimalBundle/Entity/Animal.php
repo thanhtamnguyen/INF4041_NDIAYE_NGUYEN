@@ -38,13 +38,6 @@ class Animal
     /**
      * @var string
      *
-     * @ORM\Column(name="family", type="string", length=255)
-     */
-    private $family;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="class", type="string", length=255)
      */
     private $class;
@@ -125,29 +118,6 @@ class Animal
     public function getSpecies()
     {
         return $this->species;
-    }
-
-    /**
-     * Set family
-     *
-     * @param string $family
-     * @return Animal
-     */
-    public function setFamily($family)
-    {
-        $this->family = $family;
-
-        return $this;
-    }
-
-    /**
-     * Get family
-     *
-     * @return string 
-     */
-    public function getFamily()
-    {
-        return $this->family;
     }
 
     /**

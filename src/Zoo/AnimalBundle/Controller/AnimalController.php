@@ -6,11 +6,13 @@ use Zoo\AnimalBundle\Entity\Animal;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class AnimalController extends Controller
 {
     public function listAction()
-    {   /*
+    {   
+        /*
         * Get all animals from DB
         * Return list into list.html.twig
         */
@@ -26,7 +28,8 @@ class AnimalController extends Controller
     }
     
     public function showAction($id)
-    {   /*
+    {   
+        /*
         * Get one animal from DB with its $id
         * Return it into show.html.twig
         */
@@ -39,17 +42,56 @@ class AnimalController extends Controller
     }
     
     public function addAction()
-    {   $request = $this->getRequest();
+    {   
+        /*
+        * Adding an Animal
+        */
+        $request = $this->getRequest();
         $animal = new Animal();
 
+//        $builder->add('isAttending', ChoiceType::class, array(
+//            'choices'  => array(
+//                'Gastéropode' => 'Gastéropode',
+//                'Mollusque' => 'Mollusque',
+//                'Anthropode' => 'Anthropode',
+//                'Poisson' => 'Poisson',
+//                'Amphibien' => 'Amphibien',
+//                'Reptile' => 'Reptile',
+//                'Mammifère' => 'Mammifère',
+//                'Oiseau' => 'Oiseau',
+//            ),
+//        ))
+        // Family, Species, Class as ArrayCollection later V1
+//        $formBuilder = $this
+//            ->get('form.factory')
+//            ->createBuilder('form', $animal)
+//            ->add('name',    'text')
+//            ->add('species', 'text', array('required' => false))
+////            ->add('family',  'text', array('required' => false))
+//            ->add('class',   'text', array('required' => false))
+//            ->add('weight',  'number', array('required' => false))
+//            ->add('height',  'number', array('required' => false))
+//            ->add('age',     'integer', array('required' => false))
+//            ->add('save',    'submit');
+//     
         // Family, Species, Class as ArrayCollection later
         $formBuilder = $this
             ->get('form.factory')
             ->createBuilder('form', $animal)
             ->add('name',    'text')
             ->add('species', 'text', array('required' => false))
-            ->add('family',  'text', array('required' => false))
-            ->add('class',   'text', array('required' => false))
+//            ->add('family',  'text', array('required' => false))
+            ->add('class',   'choice', array('choices'   => array(
+                        'Gastéropode' => 'Gastéropode',
+                        'Mollusque' => 'Mollusque',
+                        'Anthropode' => 'Anthropode',
+                        'Poisson' => 'Poisson',
+                        'Amphibien' => 'Amphibien',
+                        'Reptile' => 'Reptile',
+                        'Mammifère' => 'Mammifère',
+                        'Oiseau' => 'Oiseau',
+                    )))
+//            ->add('class',   'text', array('required' => false))
             ->add('weight',  'number', array('required' => false))
             ->add('height',  'number', array('required' => false))
             ->add('age',     'integer', array('required' => false))
@@ -85,6 +127,9 @@ class AnimalController extends Controller
     
     public function editAction($id)
     {
+        /*
+        * Edit an Animal
+        */
         $request = $this->getRequest();
         $animal = $this->getDoctrine()
             ->getManager()
@@ -101,8 +146,17 @@ class AnimalController extends Controller
                 ->createBuilder('form', $animal)
                 ->add('name',    'text')
                 ->add('species', 'text')
-                ->add('family',  'text')
-                ->add('class',   'text')
+//                ->add('family',  'text')
+                ->add('class',   'choice', array('choices'   => array(
+                        'Gastéropode' => 'Gastéropode',
+                        'Mollusque' => 'Mollusque',
+                        'Anthropode' => 'Anthropode',
+                        'Poisson' => 'Poisson',
+                        'Amphibien' => 'Amphibien',
+                        'Reptile' => 'Reptile',
+                        'Mammifère' => 'Mammifère',
+                        'Oiseau' => 'Oiseau',
+                    )))
                 ->add('weight',  'number')
                 ->add('height',  'number')
                 ->add('age',     'integer')
