@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>{% block title %}Zoo Management{% endblock %}</title>
     {% block stylesheets %}
+<!--        <link rel="stylesheet" href="{{ asset('more_css.css') }}" />-->
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.css') }}" />
     {% endblock %}
@@ -21,6 +22,7 @@
 
 <body>
     {% block header %}
+     <img class="img-rounded" src="{{ asset('Image/header.png') }}" alt="Banniere" width="100%"/>
       <div class="bs-docs-header">
             <div class="container">
            <div class="navbar-default" role="navigation">
@@ -35,17 +37,17 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav nav-tabs nav-justified">
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/about">About</a></li>
+                        <li><a href="/home">Page Principal</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
                                 Animal<span class="mdi mdi-chevron-down"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li role="presentation"><a href="/animal">Liste</a></li>
-                                <li role="presentation"><a href="/animal/add">Ajouter</a></li>
+                                <li role="presentation"><a href="/animal">Consulter la Liste</a></li>
+                                <li role="presentation"><a href="/animal/add">Ajouter un Animal</a></li>
                             </ul>
                         </li>
+                        <li><a href="/about">A Propos</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,9 +68,12 @@
         <div class="container">
             <p class="page-header"></p>
             <p class="text-center">
-                <span class="glyphicon glyphicon-copyright-mark"></span> NDIAYE A, NGUYEN TT
                 <span class="glyphicon glyphicon-copyright-mark"></span> <a class="black" href="https://www.esiea.fr" target="_blank">ESIEA</a> 2016.
-                <br><a class="black" href="https://www.symfony.com/" target="_blank">Symfony</a> 2.8, <a class="black" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> 3.3.7 and  <a class="black" href="http://glyphicons.com/" target="_blank">Glyphicons</a>.
+                <br>
+                Photos <span class="glyphicon glyphicon-copyright-mark"></span> 2016 NGUYEN T.T 
+            </p>
+            <p class="text-center">
+                <a class="black" href="https://www.symfony.com/" target="_blank">Symfony</a> 2.8, <a class="black" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> 3.3.7 and  <a class="black" href="http://glyphicons.com/" target="_blank">Glyphicons</a>.
             </p>
         </div>
         <!-- container -->
