@@ -26,7 +26,6 @@ CREATE TABLE `animal` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `species` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `family` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `class` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `weight` double NOT NULL,
   `height` double NOT NULL,
@@ -41,7 +40,7 @@ CREATE TABLE `animal` (
 
 LOCK TABLES `animal` WRITE;
 /*!40000 ALTER TABLE `animal` DISABLE KEYS */;
-INSERT INTO `animal` VALUES (1,'Felix','Chat','Félidé','Mammifère',4.2,0.27,2),(4,'Balto','Chien-Loup','Canidé','Mammifère',24.5,1.3,5),(5,'Jolly Jumper','Cheval','Equidé','Mammifère',80.3,1.4,10),(6,'Titi','Canari','Fringilidae','Oiseau',0.2,0.015,1),(7,'Hedwige','Harfang des Neiges','Rapace','Oiseau',7.98,0.09,3),(8,'Simba','Lion','Felidé','Mammifère',180,100,6);
+INSERT INTO `animal` VALUES (1,'Felix','Chat','Mammifère',4.2,0.27,2),(4,'Balto','Chien-Loup','Mammifère',24.5,1.3,5),(5,'Jolly Jumper','Cheval','Mammifère',80.3,1.4,10),(6,'Titi','Canari','Oiseau',0.2,0.015,1),(7,'Hedwige','Harfang des Neiges','Oiseau',7.98,0.09,3),(8,'Simba','Lion','Mammifère',180,100,6);
 /*!40000 ALTER TABLE `animal` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
