@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: eu-cdbr-west-01.cleardb.com
+    database_port: 3307
+    database_name: heroku_fbdb1e09efb6809
+    database_user: b2bd3192607daa
+    database_password: d442aba7
+    mailer_transport: smtp
+    mailer_host: thnguyen@et.esiea.fr
+    mailer_user: thnguyen@et.esiea.fr
+    mailer_password: null
+    secret: ThisTokenIsNotSoSecretChangeIt
