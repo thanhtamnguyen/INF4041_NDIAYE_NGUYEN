@@ -33,6 +33,9 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
+        "pre-install-cmd": [
+            "Zoo\\Composer\\HerokuEnvironment::populateEnvironment"
+        ],
         "post-install-cmd": [
             "@symfony-scripts"
         ],
