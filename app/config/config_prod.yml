@@ -27,4 +27,4 @@ monolog:
             type:  console
 doctrine:
     dbal:
-        url: "%database_url%"
+        url: parse_url(getenv("CLEARDB_DATABASE_URL"))
